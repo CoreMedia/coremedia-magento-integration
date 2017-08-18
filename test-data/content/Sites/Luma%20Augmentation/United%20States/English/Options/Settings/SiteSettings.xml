@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Luma Augmentation/United States/English/Options/Settings" name="SiteSettings" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>de-DE</locale>
+<master>
+</master>
+<settings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="absoluteUrlPrefixes">
+<Struct>
+<StructListProperty Name="live">
+<Struct>
+<StringProperty Name="urlPrefix">${blueprint.site.mapping.helios}</StringProperty>
+</Struct>
+</StructListProperty>
+<StructListProperty Name="preview">
+<Struct>
+<StringProperty Name="urlPrefix">${blueprint.site.mapping.helios}</StringProperty>
+</Struct>
+</StructListProperty>
+</Struct>
+</StructProperty>
+</Struct>
+</settings>
+<identifier></identifier>
+</CMSettings>

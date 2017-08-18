@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMPicture folder="/Sites/Luma Augmentation/United States/English/Pictures" name="Urban Look Banner Picture" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="isDefault">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">false</StringProperty>
+<StringProperty Name="portrait_ratio3x4">false</StringProperty>
+<StringProperty Name="portrait_ratio1x1">false</StringProperty>
+<StringProperty Name="landscape_ratio4x3">false</StringProperty>
+<StringProperty Name="landscape_ratio4x1">false</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="relative">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">position;x1=0.3841463414634147;y1=0;x2=0.6452668847571328;y2=1</StringProperty>
+<StringProperty Name="portrait_ratio3x4">position;x1=0.23170731707317074;y1=0;x2=0.5352599486521181;y2=1</StringProperty>
+<StringProperty Name="portrait_ratio1x1">position;x1=0.18495934959349594;y1=0;x2=0.5896961916987591;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio4x3">position;x1=0.11991869918699188;y1=0;x2=0.6595678219940093;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio4x1">position;x1=0;y1=0.01507537688442211;x2=1;y2=0.6327606824760996</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="transforms">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">b;a=0;c=1/crop;x=730;y=0;width=496;height=769</StringProperty>
+<StringProperty Name="portrait_ratio3x4">b;a=0;c=1/crop;x=440;y=0;width=577;height=769</StringProperty>
+<StringProperty Name="portrait_ratio1x1">b;a=0;c=1/crop;x=351;y=0;width=769;height=769</StringProperty>
+<StringProperty Name="landscape_ratio4x3">b;a=0;c=1/crop;x=228;y=0;width=1025;height=769</StringProperty>
+<StringProperty Name="landscape_ratio16x9">b;a=0;c=1/crop;x=266;y=0;width=1367;height=769</StringProperty>
+<StringProperty Name="landscape_ratio5x2">b;a=0;c=1/crop;x=0;y=4;width=1900;height=760</StringProperty>
+<StringProperty Name="landscape_ratio4x1">b;a=0;c=1/crop;x=0;y=12;width=1900;height=475</StringProperty>
+</Struct>
+</StructProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>urban-look-banner</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<alt>urban-look-banner</alt>
+<copyright></copyright>
+<dataUrl></dataUrl>
+<width>1900</width>
+<height>769</height>
+<data md5="5a28c653ca23bd0252e4a6219146b869" size="136601" href="../../../../../../export_blob/serverexport/__blob/5a28c653ca23bd0252e4a6219146b869.blob" mimetype="image/jpeg"/>
+<asset>
+</asset>
+</CMPicture>

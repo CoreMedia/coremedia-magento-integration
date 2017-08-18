@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMPicture folder="/Sites/Luma Augmentation/United States/English/Pictures" name="Personal Style Picture" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="isDefault">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">false</StringProperty>
+<StringProperty Name="portrait_ratio3x4">false</StringProperty>
+<StringProperty Name="portrait_ratio1x1">false</StringProperty>
+<StringProperty Name="landscape_ratio4x3">false</StringProperty>
+<StringProperty Name="landscape_ratio16x9">false</StringProperty>
+<StringProperty Name="landscape_ratio4x1">false</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="relative">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">position;x1=0.18495934959349594;y1=0;x2=0.44302386572252817;y2=1</StringProperty>
+<StringProperty Name="portrait_ratio3x4">position;x1=0.1869918699186992;y1=0;x2=0.4869918699186992;y2=1</StringProperty>
+<StringProperty Name="portrait_ratio1x1">position;x1=0.1869918699186992;y1=0;x2=0.5869918699186992;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio4x3">position;x1=0.09552845528455285;y1=0;x2=0.6288617886178862;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio16x9">position;x1=0;y1=0;x2=0.711111111111111;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio4x1">position;x1=0;y1=0;x2=1;y2=0.625</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="transforms">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">b;a=0;c=1/crop;x=222;y=0;width=310;height=480</StringProperty>
+<StringProperty Name="portrait_ratio3x4">b;a=0;c=1/crop;x=224;y=0;width=360;height=480</StringProperty>
+<StringProperty Name="portrait_ratio1x1">b;a=0;c=1/crop;x=224;y=0;width=480;height=480</StringProperty>
+<StringProperty Name="landscape_ratio4x3">b;a=0;c=1/crop;x=115;y=0;width=640;height=480</StringProperty>
+<StringProperty Name="landscape_ratio16x9">b;a=0;c=1/crop;x=0;y=0;width=853;height=480</StringProperty>
+<StringProperty Name="landscape_ratio5x2">b;a=0;c=1</StringProperty>
+<StringProperty Name="landscape_ratio4x1">b;a=0;c=1/crop;x=0;y=0;width=1200;height=300</StringProperty>
+</Struct>
+</StructProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>personal-style</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<alt>personal-style</alt>
+<copyright></copyright>
+<dataUrl></dataUrl>
+<width>1200</width>
+<height>480</height>
+<data md5="fbaed97a504e9a69f7af178e543effc7" size="72314" href="../../../../../../export_blob/serverexport/__blob/fbaed97a504e9a69f7af178e543effc7.blob" mimetype="image/jpeg"/>
+<asset>
+</asset>
+</CMPicture>

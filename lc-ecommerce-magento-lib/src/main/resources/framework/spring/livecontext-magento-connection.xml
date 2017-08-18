@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="classpath:/framework/spring/livecontext-magento-services.xml"/>
+
+  <bean name="commerce:mag1" class="com.coremedia.blueprint.base.livecontext.ecommerce.common.BaseCommerceConnection" scope="prototype">
+    <property name="storeContextProvider" ref="magentoStoreContextProvider"/>
+    <property name="userContextProvider" ref="magentoUserContextProvider"/>
+    <property name="catalogService" ref="magentoCatalogService"/>
+    <!--<property name="marketingSpotService" ref="magentoMarketingSpotService"/>-->
+    <!--<property name="segmentService" ref="magentoSegmentService"/>-->
+    <!--<property name="cartService" ref="cartService"/>-->
+    <!--<property name="availabilityService" ref="availabilityService"/>-->
+    <!--<property name="searchService" ref="searchService"/>-->
+    <!--<property name="workspaceService" ref="workspaceService"/>-->
+    <!--<property name="assetUrlProvider" ref="assetUrlProvider"/>-->
+    <property name="idProvider" ref="magentoCommerceIdProvider"/>
+    <!--<property name="contractService" ref="contractService"/>-->
+    <property name="commerceBeanFactory" ref="magentoCommerceBeanFactory"/>
+    <!--<property name="userSessionService" ref="commerceUserSessionService"/>-->
+    <!--<property name="userService" ref="commerceUserService"/>-->
+    <property name="vendorUrl" value="${livecontext.magento.vendorUrl}"/>
+    <property name="vendorVersion" value="${livecontext.magento.vendorVersion}"/>
+    <property name="vendorName" value="${livecontext.magento.vendorName}"/>
+  </bean>
+
+</beans>

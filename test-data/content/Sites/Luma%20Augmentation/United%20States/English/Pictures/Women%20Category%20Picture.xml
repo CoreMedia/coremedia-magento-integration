@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMPicture folder="/Sites/Luma Augmentation/United States/English/Pictures" name="Women Category Picture" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="transforms">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">b;a=0;c=1/crop;x=926;y=0;width=1723;height=2670</StringProperty>
+<StringProperty Name="portrait_ratio3x4">b;a=0;c=1/crop;x=800;y=0;width=2003;height=2670</StringProperty>
+<StringProperty Name="portrait_ratio1x1">b;a=0;c=1/crop;x=522;y=0;width=2670;height=2670</StringProperty>
+<StringProperty Name="landscape_ratio4x3">b;a=0;c=1/crop;x=59;y=0;width=3560;height=2670</StringProperty>
+<StringProperty Name="landscape_ratio16x9">b;a=0;c=1/crop;x=0;y=420;width=4000;height=2250</StringProperty>
+<StringProperty Name="landscape_ratio5x2">b;a=0;c=1/crop;x=0;y=413;width=4000;height=1600</StringProperty>
+<StringProperty Name="landscape_ratio4x1">b;a=0;c=1/crop;x=0;y=480;width=4000;height=1000</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="isDefault">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">false</StringProperty>
+<StringProperty Name="portrait_ratio3x4">false</StringProperty>
+<StringProperty Name="portrait_ratio1x1">false</StringProperty>
+<StringProperty Name="landscape_ratio4x3">false</StringProperty>
+<StringProperty Name="landscape_ratio16x9">false</StringProperty>
+<StringProperty Name="landscape_ratio5x2">false</StringProperty>
+<StringProperty Name="landscape_ratio4x1">false</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="relative">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">position;x1=0.23157894736842105;y1=0;x2=0.6622241086587436;y2=1</StringProperty>
+<StringProperty Name="portrait_ratio3x4">position;x1=0.19999999999999998;y1=0;x2=0.7006249999999999;y2=1</StringProperty>
+<StringProperty Name="portrait_ratio1x1">position;x1=0.13052631578947368;y1=0;x2=0.7980263157894737;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio4x3">position;x1=0.014736842105263158;y1=0;x2=0.9047368421052631;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio16x9">position;x1=0;y1=0.1573033707865168;x2=1;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio5x2">position;x1=0;y1=0.15457413249211355;x2=1;y2=0.7538250688217016</StringProperty>
+<StringProperty Name="landscape_ratio4x1">position;x1=0;y1=0.17981072555205047;x2=1;y2=0.554342560758043</StringProperty>
+</Struct>
+</StructProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>Women Category Picture</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<alt>Women Category Picture</alt>
+<copyright></copyright>
+<dataUrl></dataUrl>
+<width>4000</width>
+<height>2670</height>
+<data md5="0bbfc8ddeb1ed87398d4314c69d1ebd9" size="607872" href="../../../../../../export_blob/serverexport/__blob/0bbfc8ddeb1ed87398d4314c69d1ebd9.blob" mimetype="image/jpeg"/>
+<asset>
+</asset>
+</CMPicture>

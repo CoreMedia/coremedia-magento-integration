@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.coremedia.blueprint</groupId>
+    <artifactId>extensions</artifactId>
+    <version>17-BP-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>magento</artifactId>
+  <packaging>pom</packaging>
+
+  <properties>
+    <coremedia.project.extension.name>Magento Integration</coremedia.project.extension.name>
+    <coremedia.project.extension.modelVersion>1.0</coremedia.project.extension.modelVersion>
+    <workspace.configuration.dir>../../../../workspace-configuration</workspace.configuration.dir>
+  </properties>
+
+  <modules>
+    <module>magento-preview-cae</module>
+    <module>lc-ecommerce-magento-lib</module>
+    <module>lc-ecommerce-magento-component</module>
+    <module>test-data</module>
+  </modules>
+</project>

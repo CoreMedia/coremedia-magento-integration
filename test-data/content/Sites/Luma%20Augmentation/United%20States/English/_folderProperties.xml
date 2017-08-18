@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMFolderProperties folder="/Sites/Luma Augmentation/United States/English" name="_folderProperties" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale></locale>
+<master>
+</master>
+<contexts>
+<link href="Navigation/Fragments/Luma%20Homepage/Luma%20Home%20Page.xml" path="/Sites/Luma%20Augmentation/United%20States/English/Navigation/Fragments/Luma%20Homepage/Luma%20Home%20Page"/>
+</contexts>
+</CMFolderProperties>

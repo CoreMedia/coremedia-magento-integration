@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <import resource="livecontext-magento-services.xml"/>
+  <import resource="classpath:/framework/spring/livecontext-cache.xml"/>
+
+  <bean name="magentoAbstractCommerceBean" scope="prototype" abstract="true"
+        class="com.coremedia.livecontext.ecommerce.magento.beans.AbstractMagentoCommerceBean">
+    <property name="commerceBeanFactory" ref="magentoCommerceBeanFactory"/>
+    <!--<property name="commerceBeanHelper" ref="magentoCommerceBeanHelper"/>-->
+    <property name="catalogService" ref="magentoCatalogService"/>
+    <property name="defaultLocale" value="${livecontext.magento.default.locale}"/>
+    <property name="commerceCache" ref="magentoCommerceCache"/>
+    <property name="catalogResource" ref="magentoCatalogResource"/>
+  </bean>
+
+  <bean name="magentoCommerceBeanFactory:category" parent="magentoAbstractCommerceBean"
+        class="com.coremedia.livecontext.ecommerce.magento.beans.MagentoCategory" scope="prototype">
+  </bean>
+
+  <bean name="magentoCommerceBeanFactory:product" parent="magentoAbstractCommerceBean"
+        class="com.coremedia.livecontext.ecommerce.magento.beans.MagentoProduct" scope="prototype">
+  </bean>
+
+  <!--<bean name="magentoCommerceBeanFactory:sku" parent="magentoAbstractCommerceBean"-->
+        <!--class="com.coremedia.livecontext.ecommerce.magento.beans.MagentoProductVariant" scope="prototype">-->
+    <!--<property name="productsResource" ref="ocapiProductsResource"/>-->
+  <!--</bean>-->
+
+  <!--<bean name="magentoCommerceBeanFactory:marketingspot" parent="magentoAbstractCommerceBean"-->
+        <!--class="com.coremedia.livecontext.ecommerce.magento.beans.MarketingSpotImpl" scope="prototype">-->
+    <!--<property name="promotionsResource" ref="ocapiPromotionsResource"/>-->
+  <!--</bean>-->
+
+  <!--<bean name="magentoCommerceBeanFactory:segment" parent="magentoAbstractCommerceBean"-->
+        <!--class="com.coremedia.livecontext.ecommerce.magento.beans.SegmentImpl" scope="prototype">-->
+    <!--<property name="customResource" ref="ocapiCustomResource" />-->
+  <!--</bean>-->
+
+</beans>

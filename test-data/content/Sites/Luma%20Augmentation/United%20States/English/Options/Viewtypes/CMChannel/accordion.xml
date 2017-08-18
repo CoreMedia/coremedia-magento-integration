@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Luma Augmentation/United States/English/Options/Viewtypes/CMChannel" name="accordion" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description></description>
+<icon md5="bc043a98f5e54d727d81d805cdd065bb" size="3030" href="../../../../../../../../export_blob/serverexport/__blob/bc043a98f5e54d727d81d805cdd065bb.blob" mimetype="image/png"/>
+<layout>accordion</layout>
+</CMViewtype>

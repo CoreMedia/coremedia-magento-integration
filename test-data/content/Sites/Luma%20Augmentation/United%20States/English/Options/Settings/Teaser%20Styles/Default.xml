@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Luma Augmentation/United States/English/Options/Settings/Teaser Styles" name="Default" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<settings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StringProperty Name="title">Default Style</StringProperty>
+<StringProperty Name="description">The default overlay style</StringProperty>
+<StructProperty Name="style">
+<Struct>
+<StringProperty Name="color">#000</StringProperty>
+<StringProperty Name="backgroundColor">#FFF</StringProperty>
+</Struct>
+</StructProperty>
+</Struct>
+</settings>
+<identifier></identifier>
+</CMSettings>

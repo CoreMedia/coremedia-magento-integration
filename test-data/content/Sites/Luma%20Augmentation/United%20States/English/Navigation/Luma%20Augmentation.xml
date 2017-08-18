@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSite folder="/Sites/Luma Augmentation/United States/English/Navigation" name="Luma Augmentation" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<id>5e0bb346a3ab5e8cb717b645c8e72980</id>
+<name>Luma Augmentation</name>
+<root>
+<link href="Fragments/Luma%20Homepage/Luma%20Home%20Page.xml" path="/Sites/Luma%20Augmentation/United%20States/English/Navigation/Fragments/Luma%20Homepage/Luma%20Home%20Page"/>
+</root>
+<siteManagerGroup></siteManagerGroup>
+<linkedSettings>
+<link href="../Options/Settings/SiteSettings.xml" path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/SiteSettings"/>
+</linkedSettings>
+</CMSite>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMExternalPage folder="/Sites/Luma Augmentation/United States/English/Navigation/Fragments/Luma Homepage" name="Luma Home Page" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<LinkProperty Name="mediaelementplayer_flash" LinkType="coremedia:///cap/contenttype/CMInteractive"/>
+<LinkProperty Name="livecontext.assets.default.picture" LinkType="coremedia:///cap/contenttype/CMPicture"/>
+<StringProperty Name="shopNow">disabled</StringProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+<link href="../../../Options/Settings/LiveContext.xml" path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/LiveContext"/>
+<link href="../../../Options/Settings/CMChannel/Robots%2Etxt.xml" path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/CMChannel/Robots%2Etxt"/>
+<link href="../../../Options/Settings/CMChannel/Responsive%20Image%20Settings.xml" path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/CMChannel/Responsive%20Image%20Settings"/>
+<link href="../../../Options/Settings/Preview.xml" path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/Preview"/>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment>luma</segment>
+<title>Luma Homepage</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<children>
+<link href="../../../Augmentation/Default%20Category/Default%20Category.xml" path="/Sites/Luma%20Augmentation/United%20States/English/Augmentation/Default%20Category/Default%20Category"/>
+<link href="../Augmented%20Pages/New%20Urban%20Look.xml" path="/Sites/Luma%20Augmentation/United%20States/English/Navigation/Fragments/Augmented%20Pages/New%20Urban%20Look"/>
+</children>
+<hidden>1</hidden>
+<hiddenInSitemap>1</hiddenInSitemap>
+<javaScript>
+</javaScript>
+<css>
+</css>
+<theme>
+<link href="../../../../../../../Themes/magento/Magento%20Theme.xml" path="/Themes/magento/Magento%20Theme"/>
+</theme>
+<favicon md5="b01ec1d815971bfb59a29dbb80c6fdcc" size="22382" href="../../../../../../../../export_blob/serverexport/__blob/b01ec1d815971bfb59a29dbb80c6fdcc.blob" mimetype="image/x-icon"/>
+<placement>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="placements_2">
+<Struct>
+<LinkProperty Name="layout" LinkType="coremedia:///cap/contenttype/Document_" xlink:href="coremedia:///cap/resources/../../../Options/Settings/Pagegrid/Layouts/Home%20Page.xml" cmexport:path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/Pagegrid/Layouts/Home%20Page"/>
+<StructProperty Name="placements">
+<Struct>
+</Struct>
+</StructProperty>
+</Struct>
+</StructProperty>
+<StructListProperty Name="placements">
+<Struct>
+<LinkListProperty Name="items" LinkType="coremedia:///cap/contenttype/CMTeasable">
+<Link xlink:href="coremedia:///cap/resources/../Augmented%20Pages/New%20Urban%20Look.xml" cmexport:path="/Sites/Luma%20Augmentation/United%20States/English/Navigation/Fragments/Augmented%20Pages/New%20Urban%20Look"/>
+<Link xlink:href="coremedia:///cap/resources/../../../Augmentation/Default%20Category/Women/Women.xml" cmexport:path="/Sites/Luma%20Augmentation/United%20States/English/Augmentation/Default%20Category/Women/Women"/>
+</LinkListProperty>
+<LinkProperty Name="viewtype" LinkType="coremedia:///cap/contenttype/CMViewtype" xlink:href="coremedia:///cap/resources/../../../Options/Viewtypes/CMChannel/tiles-layout-50-50-landscape.xml" cmexport:path="/Sites/Luma%20Augmentation/United%20States/English/Options/Viewtypes/CMChannel/tiles-layout-50-50-landscape"/>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../../../Options/Settings/Pagegrid/Placements/header.xml" cmexport:path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/Pagegrid/Placements/header"/>
+</Struct>
+</StructListProperty>
+</Struct>
+</placement>
+<header>
+</header>
+<footer>
+</footer>
+<externalUriPath>home</externalUriPath>
+<externalId>home</externalId>
+</CMExternalPage>

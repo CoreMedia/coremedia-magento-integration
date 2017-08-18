@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMPicture folder="/Sites/Luma Augmentation/United States/English/Pictures" name="Training Picture" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="transforms">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">b;a=0;c=1/crop;x=1538;y=0;width=1613;height=2500</StringProperty>
+<StringProperty Name="portrait_ratio3x4">b;a=0;c=1/crop;x=1507;y=0;width=1875;height=2500</StringProperty>
+<StringProperty Name="portrait_ratio1x1">b;a=0;c=1/crop;x=797;y=0;width=2500;height=2500</StringProperty>
+<StringProperty Name="landscape_ratio4x3">b;a=0;c=1/crop;x=333;y=0;width=3333;height=2500</StringProperty>
+<StringProperty Name="landscape_ratio16x9">b;a=0;c=1/crop;x=0;y=250;width=4000;height=2250</StringProperty>
+<StringProperty Name="landscape_ratio5x2">b;a=0;c=1/crop;x=0;y=741;width=4000;height=1600</StringProperty>
+<StringProperty Name="landscape_ratio4x1">b;a=0;c=1/crop;x=0;y=1325;width=4000;height=1000</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="isDefault">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">false</StringProperty>
+<StringProperty Name="portrait_ratio3x4">false</StringProperty>
+<StringProperty Name="portrait_ratio1x1">false</StringProperty>
+<StringProperty Name="landscape_ratio16x9">false</StringProperty>
+<StringProperty Name="landscape_ratio5x2">false</StringProperty>
+<StringProperty Name="landscape_ratio4x1">false</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="relative">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">position;x1=0.38461538461538464;y1=0;x2=0.7878411910669976;y2=1</StringProperty>
+<StringProperty Name="portrait_ratio3x4">position;x1=0.37672583826429984;y1=0;x2=0.8454758382642998;y2=1</StringProperty>
+<StringProperty Name="portrait_ratio1x1">position;x1=0.19921104536489154;y1=0;x2=0.8242110453648915;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio16x9">position;x1=0;y1=0.09999999999999987;x2=1;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio5x2">position;x1=0;y1=0.29652996845425866;x2=1;y2=0.9365299684542587</StringProperty>
+<StringProperty Name="landscape_ratio4x1">position;x1=0;y1=0.5299684542586751;x2=1;y2=0.9299684542586751</StringProperty>
+</Struct>
+</StructProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>Training Picture</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<alt>Training Picture</alt>
+<copyright></copyright>
+<dataUrl></dataUrl>
+<width>4000</width>
+<height>2500</height>
+<data md5="9a0632a468020fbba86f18ff41a33169" size="507860" href="../../../../../../export_blob/serverexport/__blob/9a0632a468020fbba86f18ff41a33169.blob" mimetype="image/jpeg"/>
+<asset>
+</asset>
+</CMPicture>

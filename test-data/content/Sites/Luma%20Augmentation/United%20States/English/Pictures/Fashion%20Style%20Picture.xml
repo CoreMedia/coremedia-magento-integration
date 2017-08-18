@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMPicture folder="/Sites/Luma Augmentation/United States/English/Pictures" name="Fashion Style Picture" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="isDefault">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">false</StringProperty>
+<StringProperty Name="portrait_ratio3x4">false</StringProperty>
+<StringProperty Name="portrait_ratio1x1">false</StringProperty>
+<StringProperty Name="landscape_ratio4x3">false</StringProperty>
+<StringProperty Name="landscape_ratio5x2">false</StringProperty>
+<StringProperty Name="landscape_ratio4x1">false</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="relative">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">position;x1=0.39430894308943093;y1=0;x2=0.7572121688958826;y2=1</StringProperty>
+<StringProperty Name="portrait_ratio3x4">position;x1=0.4024390243902439;y1=0;x2=0.8243140243902439;y2=1</StringProperty>
+<StringProperty Name="portrait_ratio1x1">position;x1=0.35162601626016265;y1=0;x2=0.9141260162601627;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio4x3">position;x1=0.25;y1=0;x2=1;y2=1</StringProperty>
+<StringProperty Name="landscape_ratio5x2">position;x1=0;y1=0.021660649819494587;x2=1;y2=0.7327717609306057</StringProperty>
+<StringProperty Name="landscape_ratio4x1">position;x1=0;y1=0.1371841155234657;x2=1;y2=0.5816285599679101</StringProperty>
+</Struct>
+</StructProperty>
+<StructProperty Name="transforms">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">b;a=0;c=1/crop;x=404;y=0;width=372;height=576</StringProperty>
+<StringProperty Name="portrait_ratio3x4">b;a=0;c=1/crop;x=412;y=0;width=432;height=576</StringProperty>
+<StringProperty Name="portrait_ratio1x1">b;a=0;c=1/crop;x=360;y=0;width=576;height=576</StringProperty>
+<StringProperty Name="landscape_ratio4x3">b;a=0;c=1/crop;x=256;y=0;width=768;height=576</StringProperty>
+<StringProperty Name="landscape_ratio16x9">b;a=0;c=1</StringProperty>
+<StringProperty Name="landscape_ratio5x2">b;a=0;c=1/crop;x=0;y=12;width=1024;height=410</StringProperty>
+<StringProperty Name="landscape_ratio4x1">b;a=0;c=1/crop;x=0;y=79;width=1024;height=256</StringProperty>
+</Struct>
+</StructProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>fashion-style</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<alt>fashion-style</alt>
+<copyright></copyright>
+<dataUrl></dataUrl>
+<width>1024</width>
+<height>576</height>
+<data md5="107a5c8e3a637c0be7d1ffcb6104e9cb" size="72594" href="../../../../../../export_blob/serverexport/__blob/107a5c8e3a637c0be7d1ffcb6104e9cb.blob" mimetype="image/jpeg"/>
+<asset>
+</asset>
+</CMPicture>

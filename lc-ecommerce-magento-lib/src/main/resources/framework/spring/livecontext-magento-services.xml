@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:annotation-config/>
+  <context:component-scan base-package="com.coremedia.livecontext.ecommerce.magento.configuration" />
+
+  <import resource="livecontext-magento-rest-connect.xml"/>
+  <import resource="livecontext-magento-cache.xml"/>
+
+
+  <bean id="magentoCommerceBeanFactory" class="com.coremedia.blueprint.base.livecontext.ecommerce.common.SpringCommerceBeanFactory"/>
+
+  <bean id="magentoCommerceBeanHelper"
+        class="com.coremedia.livecontext.ecommerce.magento.common.CommerceBeanHelper">
+    <property name="commerceBeanFactory" ref="magentoCommerceBeanFactory"/>
+  </bean>
+
+  <!-- === Providers === -->
+  <!-- TODO: Rip this out again 
+  <bean id="magentoCommerceIdProvider" class="com.coremedia.livecontext.ecommerce.magento.common.MagentoCommerceIdProvider">
+  -->
+  <bean id="magentoCommerceIdProvider" class="com.coremedia.blueprint.base.livecontext.ecommerce.common.BaseCommerceIdProvider">
+    <property name="vendor" value="${livecontext.magento.vendorPrefix}"/>
+  </bean>
+
+  <bean id="magentoStoreContextProvider" class="com.coremedia.livecontext.ecommerce.magento.common.MagentoStoreContextProvider">
+    <property name="settingsService" ref="settingsService"/>
+    <property name="sitesService" ref="sitesService"/>
+    <property name="cache" ref="cache"/>
+    <property name="commerceCache" ref="magentoCommerceCache"/>
+    <property name="storeConfigResource" ref="magentoStoreConfigResource"/>
+  </bean>
+
+  <bean id="magentoUserContextProvider" class="com.coremedia.blueprint.base.ecommerce.user.CmsUserContextProvider"/>
+
+  <!-- === Services === -->
+  <bean id="magentoAbstractCommerceService" abstract="true"
+        class="com.coremedia.livecontext.ecommerce.magento.common.AbstractCommerceService">
+    <property name="commerceBeanHelper" ref="magentoCommerceBeanHelper"/>
+    <property name="commerceCache" ref="magentoCommerceCache"/>
+  </bean>
+
+  <bean id="magentoCatalogService" parent="magentoAbstractCommerceService"
+        class="com.coremedia.livecontext.ecommerce.magento.catalog.MagentoCatalogService">
+    <property name="catalogResource" ref="magentoCatalogResource"/>
+    <property name="commerceIdProvider" ref="magentoCommerceIdProvider"/>
+  </bean>
+
+  <!--<bean id="magentoCommerceUserSessionService" class="com.coremedia.livecontext.ecommerce.magento.user.UserSessionServiceImpl"/>-->
+  <!--<bean id="magentoCommerceUserService" class="com.coremedia.livecontext.ecommerce.magento.user.UserServiceImpl"/>-->
+
+</beans>

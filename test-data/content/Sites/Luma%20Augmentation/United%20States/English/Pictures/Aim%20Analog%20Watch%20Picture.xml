@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMPicture folder="/Sites/Luma Augmentation/United States/English/Pictures" name="Aim Analog Watch Picture" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<localSettings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StructProperty Name="transforms">
+<Struct>
+<StringProperty Name="portrait_ratio20x31">b;a=0;c=1/crop;x=1041;y=0;width=1554;height=2408</StringProperty>
+<StringProperty Name="portrait_ratio3x4">b;a=0;c=1/crop;x=915;y=0;width=1806;height=2408</StringProperty>
+<StringProperty Name="portrait_ratio1x1">b;a=0;c=1/crop;x=614;y=0;width=2408;height=2408</StringProperty>
+<StringProperty Name="landscape_ratio4x3">b;a=0;c=1/crop;x=213;y=0;width=3211;height=2408</StringProperty>
+<StringProperty Name="landscape_ratio16x9">b;a=0;c=1/crop;x=0;y=181;width=3636;height=2045</StringProperty>
+<StringProperty Name="landscape_ratio5x2">b;a=0;c=1/crop;x=0;y=477;width=3636;height=1454</StringProperty>
+<StringProperty Name="landscape_ratio4x1">b;a=0;c=1/crop;x=0;y=750;width=3636;height=909</StringProperty>
+</Struct>
+</StructProperty>
+</Struct>
+</localSettings>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title>Aim Analog Watch Picture</title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+</pictures>
+<related>
+</related>
+<alt>Aim Analog Watch Picture</alt>
+<copyright></copyright>
+<dataUrl></dataUrl>
+<width>3636</width>
+<height>2408</height>
+<data md5="3f4c777a6a89ec305d790661a2bced3c" size="2310115" href="../../../../../../export_blob/serverexport/__blob/3f4c777a6a89ec305d790661a2bced3c.blob" mimetype="image/jpeg"/>
+<asset>
+</asset>
+</CMPicture>

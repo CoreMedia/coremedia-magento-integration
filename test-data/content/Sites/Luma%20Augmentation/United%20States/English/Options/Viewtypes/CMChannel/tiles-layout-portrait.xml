@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Luma Augmentation/United States/English/Options/Viewtypes/CMChannel" name="tiles-layout-portrait" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays a collection in a tiles layout (portrait).</description>
+<icon md5="e814873bedb7bd60949c6cb27b4cf72d" size="3572" href="../../../../../../../../export_blob/serverexport/__blob/e814873bedb7bd60949c6cb27b4cf72d.blob" mimetype="image/png"/>
+<layout>tiles-layout-portrait</layout>
+</CMViewtype>

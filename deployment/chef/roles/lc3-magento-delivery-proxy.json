@@ -1,0 +1,11 @@
+{
+  "name": "lc3-magento-delivery-proxy",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "The role for the delivery proxy node",
+  "run_list": [
+    "role[base]",
+    "recipe[blueprint-lc3-magento::shop-proxy]",
+    "recipe[blueprint-lc3-magento::delivery-proxy]"
+  ]
+}

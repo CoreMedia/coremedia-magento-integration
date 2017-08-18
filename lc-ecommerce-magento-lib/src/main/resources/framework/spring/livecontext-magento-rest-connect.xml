@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <import resource="classpath:/com/coremedia/cache/cache-services.xml"/>
+  <import resource="classpath:/com/coremedia/cap/common/uapi-services.xml"/>
+  <import resource="classpath:/com/coremedia/blueprint/base/settings/impl/bpbase-settings-services.xml"/>
+  <import resource="classpath:/com/coremedia/cap/multisite/multisite-services.xml"/>
+
+  <!-- TODO: Use annotation based configuration -->
+  <context:property-placeholder
+          ignore-unresolvable="true"
+          location="classpath:/framework/spring/lc-ecommerce-magento.properties"
+          system-properties-mode="OVERRIDE"/>
+
+  <!-- Magento REST Connector -->
+  <bean id="magentoRestConnector" 
+        class="com.coremedia.livecontext.ecommerce.magento.rest.MagentoRestConnector">
+    <property name="apiVersion" value="${livecontext.magento.apiVersion}"/>
+    <property name="host" value="${livecontext.magento.host}"/>
+    <property name="basePath" value="${livecontext.magento.basePath}"/>
+    <property name="user" value="${livecontext.magento.user}"/>
+    <property name="password" value="${livecontext.magento.password}"/>
+  </bean>
+
+
+  <!-- Magento REST Resources (each one needing the connetor injected) -->
+  
+  <bean id="magentoCatalogResource"
+        class="com.coremedia.livecontext.ecommerce.magento.rest.resources.CatalogResource">
+    <property name="connector" ref="magentoRestConnector"/>
+  </bean>
+
+  <bean id="magentoStoreConfigResource"
+        class="com.coremedia.livecontext.ecommerce.magento.rest.resources.StoreConfigResource">
+    <property name="connector" ref="magentoRestConnector"/>
+  </bean>
+
+</beans>

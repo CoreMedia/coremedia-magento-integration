@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Luma Augmentation/United States/English/Options/Viewtypes/CMChannel" name="tiles-layout-center" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays a collection in a center focused tiles layout.</description>
+<icon md5="0ae0dc77c20425fb28d9b19164506683" size="4767" href="../../../../../../../../export_blob/serverexport/__blob/0ae0dc77c20425fb28d9b19164506683.blob" mimetype="image/png"/>
+<layout>tiles-layout-center</layout>
+</CMViewtype>

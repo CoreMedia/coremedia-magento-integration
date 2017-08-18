@@ -1,0 +1,34 @@
+# START HELPER FUNCTIONS
+def local_first_cookbook(name, dir)
+  if ::File.exist?(File.join(File.dirname(__FILE__), "#{dir}"))
+    cookbook(name, :path => "#{dir}")
+  else
+    cookbook(name)
+  end
+end
+
+def add_all_from_dir(dir)
+  cwd = File.dirname(__FILE__)
+  cookbooks_dir = File.join(cwd, dir)
+  return unless File.exist?(cookbooks_dir)
+  Dir.chdir(File.join(cwd, dir))
+  Dir.glob('*').each do |cookbook_name|
+    cookbook cookbook_name, :path => "#{dir}/#{cookbook_name}" unless cookbook_name == 'chefignore'
+  end
+  Dir.chdir(cwd)
+end
+
+# END HELPER FUNCTIONS
+
+source 'https://supermarket.chef.io'
+source 'https://supermarket.coremedia.com'
+
+metadata
+
+group :integration do
+  add_all_from_dir '../../thirdparty-cookbooks'
+  add_all_from_dir '../../coremedia-cookbooks'
+  local_first_cookbook 'blueprint-base', '../blueprint-base'
+  local_first_cookbook 'blueprint-tomcat', '../blueprint-tomcat'
+  local_first_cookbook 'blueprint-proxy', '../blueprint-proxy'
+end

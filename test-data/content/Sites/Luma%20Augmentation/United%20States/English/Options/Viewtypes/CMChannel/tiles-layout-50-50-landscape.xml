@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Luma Augmentation/United States/English/Options/Viewtypes/CMChannel" name="tiles-layout-50-50-landscape" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays a collection in 50:50 tiles layout (landscape).</description>
+<icon md5="ac05b2817c426b9e7f64b82de1d52965" size="4730" href="../../../../../../../../export_blob/serverexport/__blob/ac05b2817c426b9e7f64b82de1d52965.blob" mimetype="image/png"/>
+<layout>tiles-layout-50-50-landscape</layout>
+</CMViewtype>

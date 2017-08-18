@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+  <system>
+    <tab id="coremedia" translate="label" sortOrder="10">
+      <label>CoreMedia LiveContext</label>
+    </tab>
+    <section id="backend" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+      <class>separator-top</class>
+      <label>Backend Configuration</label>
+      <tab>coremedia</tab>
+      <resource>CoreMedia_DefaultWidget::coremedia_defaultwidget</resource>
+      <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+        <label>General Configuration</label>
+        <field id="urlprefix" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+          <label>URL Prefix</label>
+          <comment>URL prefix for obtaining page fragment for inclusion in this system.</comment>
+        </field>
+        <field id="hostname" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+          <label>Instance Hostname</label>
+          <comment>The CAE endpoint for preview or live delivery.</comment>
+        </field>
+        <field id="schema" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+          <label>Host Access Schema</label>
+          <comment>Access protocol for the host - most likely http or https.</comment>
+        </field>
+      </group>
+    </section>
+  </system>
+</config>

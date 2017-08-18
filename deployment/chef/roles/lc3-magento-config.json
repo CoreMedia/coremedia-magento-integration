@@ -1,0 +1,19 @@
+{
+  "name": "lc3-magento-config",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "This is a convenience role and not intended for production. Integrate the attributes into the blueprint-tomcat recipes in a production setup.",
+  "run_list": [
+    "recipe[blueprint-lc3-magento::cae-live-config]",
+    "recipe[blueprint-lc3-magento::cae-preview-config]",
+    "recipe[blueprint-lc3-magento::studio-config]"
+  ],
+  "env_run_lists": {
+    "development": [
+      "recipe[blueprint-lc3-magento::cae-live-config]",
+      "recipe[blueprint-lc3-magento::cae-preview-config]",
+      "recipe[blueprint-lc3-magento::studio-config]",
+      "recipe[blueprint-lc3-magento::test-data-config]"
+    ]
+  }
+}

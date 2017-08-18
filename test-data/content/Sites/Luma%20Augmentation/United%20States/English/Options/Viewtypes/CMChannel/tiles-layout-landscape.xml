@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Luma Augmentation/United States/English/Options/Viewtypes/CMChannel" name="tiles-layout-landscape" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays a collection in a tiles layout (landscape).</description>
+<icon md5="7f786d67feee73ddc3b30aa5d83a7247" size="3577" href="../../../../../../../../export_blob/serverexport/__blob/7f786d67feee73ddc3b30aa5d83a7247.blob" mimetype="image/png"/>
+<layout>tiles-layout-landscape</layout>
+</CMViewtype>

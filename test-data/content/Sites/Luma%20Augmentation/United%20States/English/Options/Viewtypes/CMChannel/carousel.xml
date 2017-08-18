@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Luma Augmentation/United States/English/Options/Viewtypes/CMChannel" name="carousel" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays a collection as a carousel with hero teasers</description>
+<icon md5="ecff5437cf2117d3224b3bfd00f3ec18" size="4644" href="../../../../../../../../export_blob/serverexport/__blob/ecff5437cf2117d3224b3bfd00f3ec18.blob" mimetype="image/png"/>
+<layout>carousel</layout>
+</CMViewtype>

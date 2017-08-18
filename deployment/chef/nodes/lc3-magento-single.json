@@ -1,0 +1,62 @@
+{
+  "blueprint": {
+    "hostname": "CMS_HOST",
+    "loopback_hostname": "localhost",
+    "maven_repository_url": "file://localhost/tmp/maven-repo",
+    "tomcat": {
+      "java_home": "/usr/lib/jvm/java"
+    },
+    "tools": {
+      "java_home": "/usr/lib/jvm/java"
+    },
+    "webapps": {
+      "content-management-server": {
+        "application.properties": {
+          "cap.server.license": "properties/corem/license.zip"
+        }
+      },
+      "master-live-server": {
+        "application.properties": {
+          "cap.server.license": "properties/corem/license.zip"
+        }
+      }
+    }
+  },
+  "livecontext": {
+    "magento": {
+      "host": "MAGENTO_HOST",
+      "user": "MAGENTO_ADMIN_USER",
+      "password": "MAGENTO_ADMIN_PASS",
+      "basePath": "/rest",
+      "admin_uri": "/admin_xxx",
+      "application.properties": {
+        "livecontext.cookie.domain": ".DOMAIN"
+      }
+    }
+  },
+  "dev": {
+    "content": {
+      "content_zip": "file://localhost/tmp/content-users.zip"
+    }
+  }
+},
+"run_list": [
+"recipe[java_se]",
+"role[mysql]",
+"role[mongodb]",
+"role[lc3-magento-config]",
+"role[solr]",
+"role[management]",
+"role[publication]",
+"role[preview]",
+"role[preview-proxy]",
+"role[lc3-magento-preview-proxy]",
+"role[studio]",
+"role[studio-proxy]",
+"role[delivery]",
+"role[lc3-magento-delivery-proxy]",
+"recipe[blueprint-lc3-magento::overview]",
+"recipe[blueprint-lc3-magento::test-data-config]",
+"recipe[blueprint-dev-tooling::content]"
+]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Luma Augmentation/United States/English/Options/Viewtypes/CMChannel" name="tiles-layout-highlight" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays a collection as a teaserlist</description>
+<icon md5="729ac264f017d22b808a746a6b08a6bb" size="4635" href="../../../../../../../../export_blob/serverexport/__blob/729ac264f017d22b808a746a6b08a6bb.blob" mimetype="image/png"/>
+<layout>tiles-layout-highlight</layout>
+</CMViewtype>

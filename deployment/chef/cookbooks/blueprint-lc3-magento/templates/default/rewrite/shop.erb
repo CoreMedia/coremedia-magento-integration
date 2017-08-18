@@ -1,0 +1,13 @@
+<%- if @params[:preview] -%>
+  ServerAlias <%= @params[:time_travel_alias] %>
+
+  RequestHeader set X-FragmentHost preview
+  Header unset X-Frame-Options
+
+<%- else -%>
+  RequestHeader set X-FragmentHost live
+  Header unset X-Frame-Options
+
+  # Send empty URL to shop home page
+  RewriteRule ^/$ /yacceleratorstorefront [R=302,L]
+<%- end -%>

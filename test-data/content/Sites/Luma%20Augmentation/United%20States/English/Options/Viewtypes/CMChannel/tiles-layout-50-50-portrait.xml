@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Luma Augmentation/United States/English/Options/Viewtypes/CMChannel" name="tiles-layout-50-50-portrait" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays a collection in 50:50 tiles layout (portrait).</description>
+<icon md5="7d772666f119af81d83ef7d80a62a5da" size="5113" href="../../../../../../../../export_blob/serverexport/__blob/7d772666f119af81d83ef7d80a62a5da.blob" mimetype="image/png"/>
+<layout>tiles-layout-50-50-portrait</layout>
+</CMViewtype>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Luma Augmentation/United States/English/Options/Viewtypes/CMPlaceholder" name="productlist-header" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description></description>
+<icon md5="1a0dde1cded0d26df64c14d7f3957184" size="3616" href="../../../../../../../../export_blob/serverexport/__blob/1a0dde1cded0d26df64c14d7f3957184.blob" mimetype="image/png"/>
+<layout>productlist-header</layout>
+</CMViewtype>

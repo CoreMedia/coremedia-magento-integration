@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <!--<import resource="classpath:/com/coremedia/cache/cache-services.xml"/>-->
+  <import resource="classpath:/framework/spring/livecontext-cache.xml"/>
+
+  <context:property-placeholder ignore-unresolvable="true"
+                                location="classpath:/framework/spring/livecontext-magento-cache.properties" />
+
+  <!--
+  <bean id="magentoCommerceCacheInvalidationListener"
+        class="com.coremedia.livecontext.ecommerce.magento.cache.CommerceCacheInvalidationListenerImpl">
+    <property name="enabled" value="false"/>
+  </bean>
+  -->
+
+  <bean id="magentoCommerceCache" class="com.coremedia.blueprint.base.livecontext.ecommerce.common.CommerceCache">
+    <property name="cache" ref="cache"/>
+    <!--<property name="enabled" value="false"/>-->
+    <property name="cacheTimesInSeconds">
+      <!--
+        Configure the cache time until invalidation in seconds for each catalog related CacheKey "type"
+      -->
+      <map>
+        <entry key="StoreInfo" value="${livecontext.ecommerce.cache.storeconfig.time}"/>
+        <entry key="Product" value="${livecontext.ecommerce.cache.product.time}"/>
+        <entry key="Category" value="${livecontext.ecommerce.cache.category.time}"/>
+        <entry key="ProductsByCategory" value="${livecontext.ecommerce.cache.productListsByCategory.time}"/>
+        <!--<entry key="MarketingSpots" value="${livecontext.ecommerce.cache.marketingSpotLists.time}"/>-->
+        <!--<entry key="MarketingSpot" value="${livecontext.ecommerce.cache.marketingSpot.time}"/>-->
+        <!--<entry key="Segments" value="${livecontext.ecommerce.cache.segmentLists.time}"/>-->
+        <!--<entry key="SegmentsByUser" value="${livecontext.ecommerce.cache.segmentsByUser.time}"/>-->
+        <!--<entry key="Segment" value="${livecontext.ecommerce.cache.segment.time}"/>-->
+      </map>
+    </property>
+    <property name="capacities">
+      <!--
+        Configure the cache capacity for each catalog related CacheKey "type"
+        If the capacity is not set, the item will not be cached (!)
+      -->
+      <map>
+        <entry key="StoreInfo" value="${livecontext.ecommerce.cache.storeconfig.capacity}"/>
+        <entry key="Product" value="${livecontext.ecommerce.cache.product.capacity}"/>
+        <entry key="Category" value="${livecontext.ecommerce.cache.category.capacity}"/>
+        <entry key="ProductsByCategory" value="${livecontext.ecommerce.cache.productListsByCategory.capacity}"/>
+      </map>
+    </property>
+  </bean>
+
+</beans>

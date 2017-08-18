@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>CoreMedia LiveContext 3.0 for Magento</title>
+  <link rel="stylesheet" type="text/css" href="assets/overview.css">
+</head>
+<body>
+<div class="page_margins" id="top">
+  <div class="page">
+    <div id="header">
+      <div id="header_content" class="clearfix">
+        <div class="logoBox">
+          <h1><a href="//coremedia.com/">CoreMedia</a></h1>
+        </div>
+      </div>
+    </div>
+    <div id="nav">
+      <div id="nav_content" class="clearfix">
+        <div
+        class="primaryNav">
+          <div class="content"></div>
+        </div>
+      </div>
+    </div>
+    <%- host = node['blueprint']['hostname'] -%>
+    <%- magento_host = node['blueprint']['livecontext']['magento']['host'] -%>
+    <%- magento_admin_uri = node['blueprint']['livecontext']['magento']['admin_uri'] -%>
+    <div id="main" class="maintenance">
+      <div id="col3" style="margin:auto;width:65%">
+        <div id="col3_content" class="clearfix">
+          <div class="floatbox">
+            <div class="detailView articleDetails">
+              <h1>Welcome to CoreMedia LiveContext 3.0 for Magento</h1>
+              <hr>
+              <div>
+                <h2>You can access our preview sites on the following URLs</h2>
+                <ul style="list-style: square; margin: 1em 0; padding-left: 40px; line-height: 1.6;">
+                  <li><a href="//preview.<%= host %>/corporate" target="_blank">Chef Corp. Corporate Site (English)</a></li>
+                  <li><a href="//preview.<%= host %>/corporate-de-de" target="_blank">Chef Corp. Corporate Site (German)</a></li>
+                  <li><a href="//shop-preview-apparel.<%= host %>/yacceleratorstorefront/?site=apparel-uk&clear=true" target="_blank">Apparel Site (UK English)</a></li>
+                </ul>
+
+                <p><br/></p>
+
+                <h2>You can access our sites on the following URLs</h2>
+                <ul style="list-style: square; margin: 1em 0; padding-left: 40px; line-height: 1.6;">
+                  <li><a href="//corporate.<%= host %>/corporate" target="_blank">Chef Corp. Corporate Site (English)</a></li>
+                  <li><a href="//corporate.<%= host %>/corporate-de-de" target="_blank">Chef Corp. Corporate Site (German)</a></li>
+                  <li><a href="//shop-apparel.<%= host %>/yacceleratorstorefront/?site=apparel-uk&clear=true" target="_blank">Apparel Site (UK English)</a></li>
+                </ul>
+
+                <p><br/></p>
+
+                <h2>The management interfaces are available at</h2>
+                <ul style="list-style: square; margin: 1em 0; padding-left: 40px; line-height: 1.6;">
+                  <li><a href="//studio.<%= host %>" target="_blank">CoreMedia Studio</a></li>
+                  <li><a href="https://<%= magento_host %><%= magento_admin_uri %>" target="_blank">Magento Adminstration Console</a></li>
+                </ul>
+
+                <p><br/></p>
+
+                <h2>Development URLs</h2>
+                <p>
+                  If you deployed the test system using the chef <code>development</code> environment, you will automatically get extra apache
+                  virtual hosts installed. These <em>candy</em> hosts provide some dev-sugar to sweeten up your daily work.
+                </p>
+                <p>
+                  A <em>candy</em> host returns the favor, i.e. it redirects the callers request to the caller itself. This allows
+                  the developer to start his webapps using the maven tomcat plugin and work with portless https URLs, without having
+                  the need to start and configure any reverse proxy such as apache or nginx.
+                </p>
+
+                <ul style="list-style: square; margin: 1em 0; padding-left: 40px; line-height: 1.6;">
+                  <li><a href="//candy-studio.<%= host %>" target="_blank">Candy Studio</a></li>
+                  <li><a href="//candy-preview.<%= host %>" target="_blank">Candy Preview</a></li>
+                  <li><a href="//candy-shop-preview-apparel.<%= host %>/yacceleratorstorefront/?site=apparel-uk" target="_blank">Candy Apparel Site (UK English)</a></li>
+                </ul>
+
+                <%= render "overview/candy-profiles-partial.erb", :cookbook => 'blueprint-proxy', :variables => { :host => host } %>
+
+                <p><br/></p>
+
+                <%= render 'other-links',
+                           :source => @other_links_source ? @other_links_source : 'overview/other-links-partial.erb',
+                           :cookbook => @other_links_cookbook ? @other_links_cookbook : 'blueprint-proxy',
+                           :variables => { :host => host }
+                %>
+
+                Enjoy!
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="ie_clearing">&nbsp;</div>
+      </div>
+    </div>
+    <%= render "overview/footer-partial.erb", :cookbook => 'blueprint-proxy' %>
+  </div>
+</div>
+</body>
+</html>

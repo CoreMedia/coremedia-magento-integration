@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Luma Augmentation/United States/English/Options/Viewtypes/CMChannel" name="tiles-layout-left" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<description>Displays a collection in a left focused tiles layout.</description>
+<icon md5="8cfbcd1c9324b592e90b1ead34d8db1f" size="4757" href="../../../../../../../../export_blob/serverexport/__blob/8cfbcd1c9324b592e90b1ead34d8db1f.blob" mimetype="image/png"/>
+<layout>tiles-layout-left</layout>
+</CMViewtype>

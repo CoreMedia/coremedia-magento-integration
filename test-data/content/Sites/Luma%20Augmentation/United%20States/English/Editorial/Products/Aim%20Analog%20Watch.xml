@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMProductTeaser folder="/Sites/Luma Augmentation/United States/English/Editorial/Products" name="Aim Analog Watch" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<viewtype>
+</viewtype>
+<linkedSettings>
+</linkedSettings>
+<resourceBundles2>
+</resourceBundles2>
+<segment></segment>
+<title></title>
+<htmlTitle></htmlTitle>
+<keywords></keywords>
+<htmlDescription></htmlDescription>
+<subjectTaxonomy>
+</subjectTaxonomy>
+<locationTaxonomy>
+</locationTaxonomy>
+<contexts>
+</contexts>
+<teaserTitle></teaserTitle>
+<pictures>
+<link href="../../Pictures/Aim%20Analog%20Watch%20Picture.xml" path="/Sites/Luma%20Augmentation/United%20States/English/Pictures/Aim%20Analog%20Watch%20Picture"/>
+</pictures>
+<related>
+</related>
+<externalId>mag:///catalog/product/24-MG04</externalId>
+</CMProductTeaser>

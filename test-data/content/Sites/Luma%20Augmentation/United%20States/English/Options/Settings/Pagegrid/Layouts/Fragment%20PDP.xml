@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Luma Augmentation/United States/English/Options/Settings/Pagegrid/Layouts" name="Fragment PDP" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<settings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<IntProperty Name="colCount">2</IntProperty>
+<IntProperty Name="rowCount">5</IntProperty>
+<StringProperty Name="cssClass">lc-two-column</StringProperty>
+<StructListProperty Name="items">
+<Struct>
+<BooleanProperty Name="editable">true</BooleanProperty>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../Placements/header.xml" cmexport:path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/Pagegrid/Placements/header"/>
+<IntProperty Name="row">1</IntProperty>
+<IntProperty Name="col">1</IntProperty>
+<IntProperty Name="height">20</IntProperty>
+<IntProperty Name="width">100</IntProperty>
+<IntProperty Name="colspan">12</IntProperty>
+</Struct>
+<Struct>
+<BooleanProperty Name="editable">true</BooleanProperty>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../Placements/footer.xml" cmexport:path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/Pagegrid/Placements/footer"/>
+<IntProperty Name="row">5</IntProperty>
+<IntProperty Name="col">1</IntProperty>
+<IntProperty Name="height">20</IntProperty>
+<IntProperty Name="width">100</IntProperty>
+<IntProperty Name="colspan">12</IntProperty>
+</Struct>
+<Struct>
+<StringProperty Name="rowspan">2</StringProperty>
+<BooleanProperty Name="editable">true</BooleanProperty>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../Placements/product-detail.xml" cmexport:path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/Pagegrid/Placements/product-detail"/>
+<IntProperty Name="row">2</IntProperty>
+<IntProperty Name="col">1</IntProperty>
+<IntProperty Name="height">50</IntProperty>
+<IntProperty Name="width">40</IntProperty>
+<IntProperty Name="colspan">3</IntProperty>
+</Struct>
+<Struct>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../Placements/additional.xml" cmexport:path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/Pagegrid/Placements/additional"/>
+<IntProperty Name="row">4</IntProperty>
+<IntProperty Name="col">1</IntProperty>
+<IntProperty Name="height">15</IntProperty>
+<IntProperty Name="width">100</IntProperty>
+<IntProperty Name="colspan">12</IntProperty>
+</Struct>
+<Struct>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../Placements/banner.xml" cmexport:path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/Pagegrid/Placements/banner"/>
+<IntProperty Name="row">2</IntProperty>
+<IntProperty Name="col">4</IntProperty>
+<IntProperty Name="height">25</IntProperty>
+<IntProperty Name="width">60</IntProperty>
+<IntProperty Name="colspan">9</IntProperty>
+</Struct>
+<Struct>
+<LinkProperty Name="section" LinkType="coremedia:///cap/contenttype/CMSymbol" xlink:href="coremedia:///cap/resources/../Placements/tab.xml" cmexport:path="/Sites/Luma%20Augmentation/United%20States/English/Options/Settings/Pagegrid/Placements/tab"/>
+<IntProperty Name="row">3</IntProperty>
+<IntProperty Name="col">4</IntProperty>
+<IntProperty Name="height">25</IntProperty>
+<IntProperty Name="width">60</IntProperty>
+<IntProperty Name="colspan">9</IntProperty>
+</Struct>
+</StructListProperty>
+<StringProperty Name="name">Fragment PDP</StringProperty>
+<StringProperty Name="description">A two column fragment layout for product detail pages (PDP) with "tab", "banner" and "additional" placement.</StringProperty>
+</Struct>
+</settings>
+<identifier></identifier>
+</CMSettings>

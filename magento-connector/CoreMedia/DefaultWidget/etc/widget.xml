@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+  <widget id="coremedia_defaultwidget" class="CoreMedia\DefaultWidget\Block\Widget\Content">
+    <label translate="true">CoreMedia Content Widget</label>
+    <description>Widget for CoreMedia Content</description>
+    <parameters>
+      <parameter name="cm_placement" xsi:type="select" visible="true" sort_order="0" >
+        <label translate="true">Placement</label>
+        <options>
+          <option name="default" value="main" selected="true">
+            <label translate="true">Default</label>
+          </option>
+          <option name="header" value="header">
+            <label translate="true">Header</label>
+          </option>
+          <option name="main" value="main">
+            <label translate="true">Main</label>
+          </option>
+          <option name="footer" value="footer">
+            <label translate="true">Footer</label>
+          </option>
+        </options>
+      </parameter>
+      <parameter name="cm_view" xsi:type="text" visible="true">
+        <label translate="true">View</label>
+        <value></value>
+      </parameter>
+    </parameters>
+  </widget>
+</widgets>

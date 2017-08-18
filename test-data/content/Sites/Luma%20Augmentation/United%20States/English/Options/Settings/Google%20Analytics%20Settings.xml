@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Luma Augmentation/United States/English/Options/Settings" name="Google Analytics Settings" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<settings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StringProperty Name="analyticsProvider">googleAnalytics</StringProperty>
+<StructProperty Name="googleAnalytics">
+<Struct>
+<StringProperty Name="serviceAccountEmail">221845287661-qgabk498hp5b2j6dbgfiqfrj4c4h4v1j@developer.gserviceaccount.com</StringProperty>
+<IntProperty Name="pageViewHistoryInterval">0</IntProperty>
+<StringProperty Name="pageReport">content-pages</StringProperty>
+<IntProperty Name="accountId">49338199</IntProperty>
+<IntProperty Name="wpid">81080246</IntProperty>
+<IntProperty Name="pid">83919271</IntProperty>
+<StringProperty Name="webPropertyId">UA-31060148-7</StringProperty>
+<StringProperty Name="domainName">auto</StringProperty>
+<StringProperty Name="applicationName">coremedia</StringProperty>
+<IntProperty Name="interval">120</IntProperty>
+<IntProperty Name="limit">9999</IntProperty>
+</Struct>
+</StructProperty>
+</Struct>
+</settings>
+<identifier></identifier>
+</CMSettings>

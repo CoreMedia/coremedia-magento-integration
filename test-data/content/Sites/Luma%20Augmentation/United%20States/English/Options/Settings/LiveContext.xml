@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMSettings folder="/Sites/Luma Augmentation/United States/English/Options/Settings" name="LiveContext" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+<locale>en-US</locale>
+<master>
+</master>
+<settings>
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+<StringProperty Name="livecontext.store.id">luma</StringProperty>
+<StringProperty Name="livecontext.connectionId">mag1</StringProperty>
+<StringProperty Name="livecontext.store.name">Luma</StringProperty>
+<StringProperty Name="livecontext.store.code">default</StringProperty>
+<BooleanProperty Name="livecontext.displayAvailability">true</BooleanProperty>
+<BooleanProperty Name="livecontext.policy.commerce-product-links">true</BooleanProperty>
+<BooleanProperty Name="livecontext.policy.commerce-category-links">true</BooleanProperty>
+</Struct>
+</settings>
+<identifier></identifier>
+</CMSettings>

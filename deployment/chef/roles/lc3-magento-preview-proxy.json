@@ -1,0 +1,15 @@
+{
+  "name": "lc3-magento-preview-proxy",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "The role for the preview proxy",
+  "run_list": [
+    "recipe[blueprint-lc3-magento::shop-preview-proxy]"
+  ],
+  "env_run_lists": {
+    "development": [
+      "recipe[blueprint-lc3-magento::shop-preview-proxy]",
+      "recipe[blueprint-lc3-magento::candy-shop-preview-proxy]"
+    ]
+  }
+}
