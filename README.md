@@ -1,3 +1,11 @@
+![Status: Active](https://documentation.coremedia.com/badges/badge_status_active.png "Status: Active")
+![For CoreMedia LiveContext](https://documentation.coremedia.com/badges/badge_coremedia_livecontext.png "For CoreMedia LiveContext")
+![Tested: 3.1707.1](https://documentation.coremedia.com/badges/badge_tested_livecontext_3-1707-1.png "Tested: 3.1707.1")
+![Target: Magento](https://documentation.coremedia.com/badges/badge_target_magento_2.1.png "Target: Magento")
+
+![CoreMedia Labs Logo](https://documentation.coremedia.com/badges/banner_coremedia_labs_wide.png "CoreMedia Labs Logo Title Text")
+
+
 # Coremedia-Magento Integration 
 
 This open-source code is part of a tutorial designed to guide you through the process of connecting any commerce system to CoreMedia LiveContext. We're using the open-source Magento system to demonstrate the power of our LiveContext features and the ease of the integration. 
