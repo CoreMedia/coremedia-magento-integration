@@ -14,7 +14,9 @@
   <import resource="livecontext-magento-cache.xml"/>
 
 
-  <bean id="magentoCommerceBeanFactory" class="com.coremedia.blueprint.base.livecontext.ecommerce.common.SpringCommerceBeanFactory"/>
+  <bean id="magentoCommerceBeanFactory" class="com.coremedia.blueprint.base.livecontext.ecommerce.common.SpringCommerceBeanFactory">
+    <property name="storeContextProvider" ref="magentoStoreContextProvider" />
+  </bean>
 
   <bean id="magentoCommerceBeanHelper"
         class="com.coremedia.livecontext.ecommerce.magento.common.CommerceBeanHelper">
@@ -25,9 +27,7 @@
   <!-- TODO: Rip this out again 
   <bean id="magentoCommerceIdProvider" class="com.coremedia.livecontext.ecommerce.magento.common.MagentoCommerceIdProvider">
   -->
-  <bean id="magentoCommerceIdProvider" class="com.coremedia.blueprint.base.livecontext.ecommerce.common.BaseCommerceIdProvider">
-    <property name="vendor" value="${livecontext.magento.vendorPrefix}"/>
-  </bean>
+  <bean id="magentoCommerceIdProvider" class="com.coremedia.livecontext.ecommerce.magento.common.MagentoCommerceIdProvider" />
 
   <bean id="magentoStoreContextProvider" class="com.coremedia.livecontext.ecommerce.magento.common.MagentoStoreContextProvider">
     <property name="settingsService" ref="settingsService"/>

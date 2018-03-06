@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-
 /**
  * Java representation of a magento category tree rest API JSON result.
  */
@@ -48,5 +47,4 @@ public class CategoryTreeDocument extends AbstractMagentoDocument {
 
   @JsonProperty("children_data")
   private List<CategoryTreeDocument> children;
-
 }

@@ -58,7 +58,7 @@
 </Struct>
 <Struct>
 <StringProperty Name="titleKey">preview_label_teaser_hero</StringProperty>
-<StringProperty Name="viewName">asTeaserHero</StringProperty>
+<StringProperty Name="viewName">asHero</StringProperty>
 </Struct>
 <Struct>
 <StringProperty Name="titleKey">preview_label_teaser</StringProperty>
@@ -74,7 +74,7 @@
 <StructListProperty Name="CMTeaser">
 <Struct>
 <StringProperty Name="titleKey">preview_label_teaser_hero</StringProperty>
-<StringProperty Name="viewName">asTeaserHero</StringProperty>
+<StringProperty Name="viewName">asHero</StringProperty>
 </Struct>
 <Struct>
 <StringProperty Name="titleKey">preview_label_teaser</StringProperty>
@@ -84,7 +84,7 @@
 <StructListProperty Name="CMProductTeaser">
 <Struct>
 <StringProperty Name="titleKey">preview_label_teaser_hero</StringProperty>
-<StringProperty Name="viewName">asTeaserHero</StringProperty>
+<StringProperty Name="viewName">asHero</StringProperty>
 </Struct>
 <Struct>
 <StringProperty Name="titleKey">preview_label_teaser</StringProperty>

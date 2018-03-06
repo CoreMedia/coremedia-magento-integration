@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CMViewtype folder="/Sites/Luma Augmentation/United States/English/Options/Viewtypes/CMChannel" name="magento-teaser-page" xmlns:cmexport="http://www.coremedia.com/2012/cmexport">
+    <locale>en-US</locale>
+    <master>
+    </master>
+    <description>Custom viewtype for Magento teaser pages</description>
+    <layout>magento-teaser-page</layout>
+</CMViewtype>

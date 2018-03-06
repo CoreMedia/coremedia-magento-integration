@@ -16,12 +16,15 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /**
  * REST-Connector for Magento REST API.
  */
 @Service
 public class MagentoRestConnector {
+
   private static final Logger LOG = LoggerFactory.getLogger(MagentoRestConnector.class);
 
   private static final String AUTHORIZATION_HEADER = "Authorization";
@@ -45,7 +48,6 @@ public class MagentoRestConnector {
   private String authToken;
 
   private RestTemplate restTemplate = new RestTemplate();
-
 
   public void setApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
@@ -75,18 +77,16 @@ public class MagentoRestConnector {
     return performGet(resourcePath, responseType, null, null);
   }
 
-
-  public <T> T performGet(String resourcePath, Class<T> responseType, String storeCode) {
-    return performGet(resourcePath, responseType, null, storeCode);
+  public <T> T performGet(String resourcePath, Class<T> responseType, @Nonnull String storeId) {
+    return performGet(resourcePath, responseType, null, storeId);
   }
-
 
   public <T> T performGet(String resourcePath, Class<T> responseType, MultiValueMap<String, String> queryParams) {
     return performGet(resourcePath, responseType, queryParams, null);
   }
 
-
-  public <T> T performGet(String resourcePath, Class<T> responseType, MultiValueMap<String, String> queryParams, String storeCode) {
+  public <T> T performGet(String resourcePath, Class<T> responseType, MultiValueMap<String, String> queryParams,
+                          @Nullable String storeId) {
     // Need to authorize first?
     if (StringUtils.isBlank(authToken)) {
       authToken = fetchAuthToken();
@@ -97,8 +97,8 @@ public class MagentoRestConnector {
             .host(host)
             .path(basePath);
 
-    if (StringUtils.isNotBlank(storeCode)) {
-      uriComponentsBuilder.path("/" + storeCode);
+    if (StringUtils.isNotBlank(storeId)) {
+      uriComponentsBuilder.path("/" + storeId);
     }
 
     uriComponentsBuilder.path("/" + apiVersion);
@@ -133,12 +133,12 @@ public class MagentoRestConnector {
 
     if (LOG.isInfoEnabled() && stopwatch != null && stopwatch.isRunning()) {
       stopwatch.stop();
-      LOG.info("performGet() GET Request '{}' returned with HTTP status code: {} (took {})", url, responseEntity.getStatusCode(), stopwatch);
+      LOG.info("performGet() GET Request '{}' returned with HTTP status code: {} (took {})", url,
+              responseEntity.getStatusCode(), stopwatch);
     }
 
     return responseEntity.getBody();
   }
-
 
   /**
    * Fetch the authentication token for magento's head token based authentication approach.
@@ -146,7 +146,8 @@ public class MagentoRestConnector {
    *
    * @return token on success or null
    */
-  public String fetchAuthToken() {
+  @Nullable
+  private String fetchAuthToken() {
     UriComponents uriComponents = UriComponentsBuilder.newInstance()
             .scheme(protocol)
             .host(host)
@@ -159,25 +160,25 @@ public class MagentoRestConnector {
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType(MediaType.APPLICATION_JSON);
 
-    HttpEntity<String> requestEntity = new HttpEntity<>("{\"username\": \"" + user + "\", \"password\": \"" + password + "\"}", headers);
+    HttpEntity<String> requestEntity = new HttpEntity<>(
+            "{\"username\": \"" + user + "\", \"password\": \"" + password + "\"}", headers);
 
     String url = uriComponents.toString();
 
     LOG.info("fetchAuthToken() fetching token via {}.", url);
     ResponseEntity<String> response = restTemplate.postForEntity(url, requestEntity, String.class);
 
-    if (response.getStatusCode().equals(HttpStatus.OK)) {
-      String result = response.getBody();
-      LOG.info("fetchAuthToken() done.");
-      return result.replaceAll("\"", "");
-    }
-    else {
+    if (!response.getStatusCode().equals(HttpStatus.OK)) {
       LOG.warn("fetchAuthToken() Unable to request authentication token. Check credentials!");
+      return null;
     }
 
-    return null;
+    String responseBody = response.getBody();
+    if (responseBody == null) {
+      return null;
+    }
+
+    LOG.info("fetchAuthToken() done.");
+    return responseBody.replaceAll("\"", "");
   }
-
-
-
 }

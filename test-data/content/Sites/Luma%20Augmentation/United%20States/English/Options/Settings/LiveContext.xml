@@ -12,6 +12,13 @@
 <BooleanProperty Name="livecontext.displayAvailability">true</BooleanProperty>
 <BooleanProperty Name="livecontext.policy.commerce-product-links">true</BooleanProperty>
 <BooleanProperty Name="livecontext.policy.commerce-category-links">true</BooleanProperty>
+<StructProperty Name="livecontext.store.config">
+  <Struct>
+    <StringProperty Name="currency">USD</StringProperty>
+    <StringProperty Name="config.id">luma</StringProperty>
+    <StringProperty Name="store.name">Luma</StringProperty>
+  </Struct>
+</StructProperty>
 </Struct>
 </settings>
 <identifier></identifier>

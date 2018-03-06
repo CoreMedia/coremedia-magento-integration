@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.coremedia.blueprint</groupId>
     <artifactId>extensions</artifactId>
-    <version>17-BP-SNAPSHOT</version>
+    <version>1-SNAPSHOT</version>
   </parent>
 
   <artifactId>magento</artifactId>
@@ -19,10 +19,12 @@
     <workspace.configuration.dir>../../../../workspace-configuration</workspace.configuration.dir>
   </properties>
 
+
   <modules>
     <module>magento-preview-cae</module>
     <module>lc-ecommerce-magento-lib</module>
-    <module>lc-ecommerce-magento-component</module>
+    <module>lc-ecommerce-magento-cae</module>
+    <module>lc-ecommerce-magento-studio-lib</module>
     <module>test-data</module>
   </modules>
 </project>

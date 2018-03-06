@@ -1,25 +1,32 @@
 package com.coremedia.livecontext.ecommerce.magento.common;
 
-import com.coremedia.blueprint.base.livecontext.ecommerce.common.DefaultConnection;
+import com.coremedia.blueprint.base.livecontext.ecommerce.common.CurrentCommerceConnection;
 import com.coremedia.livecontext.ecommerce.common.CommerceBean;
 import com.coremedia.livecontext.ecommerce.common.CommerceBeanFactory;
-import com.coremedia.livecontext.ecommerce.common.CommerceConnection;
+import com.coremedia.livecontext.ecommerce.common.CommerceId;
 import com.coremedia.livecontext.ecommerce.common.StoreContext;
 import com.coremedia.livecontext.ecommerce.magento.beans.AbstractMagentoCommerceBean;
 import com.coremedia.livecontext.ecommerce.magento.rest.documents.AbstractMagentoDocument;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Required;
 
-import java.util.ArrayList;
+import javax.annotation.Nonnull;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
+import static java.util.Collections.emptyList;
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.toList;
 
 /**
  * Utility class for {@link CommerceBean} creation.
  */
 public class CommerceBeanHelper {
+
   private static final Logger LOG = LoggerFactory.getLogger(CommerceBeanHelper.class);
+
   private CommerceBeanFactory commerceBeanFactory;
 
   /**
@@ -28,23 +35,24 @@ public class CommerceBeanHelper {
    * @param delegate delegate {@link com.coremedia.livecontext.ecommerce.magento.rest.documents.AbstractMagentoDocument}
    * @param aClass   target class
    * @param <T>      type of the target {@link CommerceBean} class
-   * @return
    */
   public <T extends CommerceBean> T createBeanFor(AbstractMagentoDocument delegate, Class<T> aClass) {
     if (delegate == null) {
       return null;
     }
 
-    String id = CommerceIdHelper.convertToInternalId(delegate.getId(), aClass);
-    CommerceConnection connection = DefaultConnection.get();
-    StoreContext storeContext = connection.getStoreContext();
-    AbstractMagentoCommerceBean bean = (AbstractMagentoCommerceBean) commerceBeanFactory.createBeanFor(id, storeContext);
+    StoreContext storeContext = CurrentCommerceConnection.get().getStoreContext();
 
-    LOG.debug("Created commerce bean for '{}'", id);
+    CommerceId commerceId = CommerceIdHelper.convertToInternalId(storeContext.getCatalogAlias(), delegate.getId(),
+            aClass);
+
+    AbstractMagentoCommerceBean bean = (AbstractMagentoCommerceBean) commerceBeanFactory
+            .createBeanFor(commerceId, storeContext);
+
+    LOG.debug("Created commerce bean for '{}'", commerceId);
 
     return aClass.cast(bean);
   }
-
 
   /**
    * Creates a list of {@link CommerceBean}s for the given delegates with the given target class.
@@ -52,32 +60,21 @@ public class CommerceBeanHelper {
    * @param delegates list of delegates {@link AbstractMagentoDocument}
    * @param aClass    target class
    * @param <T>       type of the target {@link CommerceBean} class
-   * @return
    */
-  public <T extends CommerceBean> List<T> createBeansFor(List<? extends AbstractMagentoDocument> delegates, Class<T> aClass) {
-    if (delegates == null || delegates.isEmpty()) {
-      return Collections.emptyList();
+  public <T extends CommerceBean> List<T> createBeansFor(@Nonnull List<? extends AbstractMagentoDocument> delegates,
+                                                         @Nonnull Class<T> aClass) {
+    if (delegates.isEmpty()) {
+      return emptyList();
     }
 
-    List<T> result = new ArrayList<>(delegates.size());
-    for (AbstractMagentoDocument delegate : delegates) {
-      T bean = createBeanFor(delegate, aClass);
-      if (bean != null) {
-        result.add(bean);
-      }
-    }
-
-    return Collections.unmodifiableList(result);
+    return delegates.stream()
+            .map(delegate -> createBeanFor(delegate, aClass))
+            .filter(Objects::nonNull)
+            .collect(collectingAndThen(toList(), Collections::unmodifiableList));
   }
 
-
-  public CommerceBeanFactory getCommerceBeanFactory() {
-    return commerceBeanFactory;
-  }
-
-
+  @Required
   public void setCommerceBeanFactory(CommerceBeanFactory commerceBeanFactory) {
     this.commerceBeanFactory = commerceBeanFactory;
   }
-
 }

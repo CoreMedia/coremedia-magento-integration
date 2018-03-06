@@ -10,90 +10,62 @@ import org.slf4j.LoggerFactory;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-
 /**
  * Access wrapper for the catalog json resource of magento.
  */
 public class CatalogResource extends AbstractMagentoResource {
+
   private static final Logger LOG = LoggerFactory.getLogger(CatalogResource.class);
+
   private static final int SEARCH_BATCH_SIZE = 25; // Number of filter queries
 
-  private final static String CATEGORIES_PATH = "/categories";
-
-  private final static String CATEGORIES_PRODUCTS_PATH = CATEGORIES_PATH + "/{categoryId}/products";
-
-  private final static String PRODUCTS_PATH = "/products";
-
-  private final static String PRODUCTS_SKU_PATH = PRODUCTS_PATH + "/{sku}";
-
-  private final static String SEARCH_PATH = "/search";
-
+  private static final String CATEGORIES_PATH = "/categories";
+  private static final String CATEGORIES_PRODUCTS_PATH = CATEGORIES_PATH + "/{categoryId}/products";
+  private static final String PRODUCTS_PATH = "/products";
+  private static final String PRODUCTS_SKU_PATH = PRODUCTS_PATH + "/{sku}";
+  private static final String SEARCH_PATH = "/search";
 
   /**
    * Returns the root category of the catalog.
    *
    * @return root category as presented by the Magento REST API
    */
-  public CategoryDocument getRootCategory() {
-    String storeCode = getStoreCode();
-    LOG.info("getRootCategory() {}", storeCode);
-    return getConnector().performGet(CATEGORIES_PATH, CategoryDocument.class, storeCode);
+  public CategoryDocument getRootCategory(String storeId) {
+    LOG.info("getRootCategory() {}", storeId);
+    return getConnector().performGet(CATEGORIES_PATH, CategoryDocument.class, storeId);
   }
-
 
   /**
    * Returns a category by the given category id.
-   *
-   * @param categoryId
-   * @return
    */
-  public CategoryDocument getCategoryById(String categoryId) {
-    String storeCode = getStoreCode();
-    LOG.info("getCategoryById() {} in {}", categoryId, storeCode);
-    return getConnector().performGet(CATEGORIES_PATH + "/" + categoryId, CategoryDocument.class, storeCode);
+  public CategoryDocument getCategoryById(@Nonnull String storeId, @Nonnull String categoryId) {
+    LOG.info("getCategoryById() {} in {}", categoryId, storeId);
+    return getConnector().performGet(CATEGORIES_PATH + "/" + categoryId, CategoryDocument.class, storeId);
   }
 
-
-  /**
-   * Returns a list of category documents for the given id array.
-   *
-   * @param categoryIds array containing magento category ids
-   * @return Cateory document instance resembling the given ids
-   */
-  public List<CategoryDocument> getCategories(String[] categoryIds) {
-    List<CategoryDocument> categories = new ArrayList<>();
-
-    for (String categoryId : categoryIds) {
-      categories.add(getCategoryById(categoryId));
-    }
-
-    return categories;
-  }
-
-
-  public List<CategoryProductLinkDocument> getLinkedProducts(String categoryId) {
+  public List<CategoryProductLinkDocument> getLinkedProducts(@Nonnull String storeId, @Nonnull String categoryId) {
     String resourcePath = CATEGORIES_PRODUCTS_PATH.replace("{categoryId}", categoryId);
-    CategoryProductLinkDocument[] links = getConnector().performGet(resourcePath, CategoryProductLinkDocument[].class, getStoreCode());
+    CategoryProductLinkDocument[] links = getConnector().performGet(resourcePath, CategoryProductLinkDocument[].class,
+            storeId);
     return Arrays.asList(links);
   }
 
-
-  public ProductDocument getProductBySku(String sku) {
+  public ProductDocument getProductBySku(@Nonnull String storeId, @Nonnull String sku) {
     String resourcePath = PRODUCTS_SKU_PATH.replace("{sku}", sku);
-    return getConnector().performGet(resourcePath, ProductDocument.class, getStoreCode());
+    return getConnector().performGet(resourcePath, ProductDocument.class, storeId);
   }
 
-
-  public List<ProductDocument> getProductsBySku(List<String> skus) {
+  public List<ProductDocument> getProductsBySku(@Nonnull String storeId, @Nonnull List<String> skus) {
     List<ProductDocument> products = new ArrayList<>();
     List<List<String>> partitions = Lists.partition(skus, SEARCH_BATCH_SIZE);
     for (List<String> partition : partitions) {
-      ProductSearchResultsDocument result = searchProductsBySku(partition);
+      ProductSearchResultsDocument result = searchProductsBySku(storeId, partition);
       if (result != null && result.getTotalCount() > 0) {
         products.addAll(result.getItems());
       }
@@ -101,7 +73,7 @@ public class CatalogResource extends AbstractMagentoResource {
     return products;
   }
 
-  protected ProductSearchResultsDocument searchProductsBySku(List<String> skus) {
+  protected ProductSearchResultsDocument searchProductsBySku(@Nonnull String storeId, @Nonnull List<String> skus) {
     MultiValueMap queryParams = new LinkedMultiValueMap();
     int filterIndex = 0;
     for (String sku : skus) {
@@ -113,11 +85,12 @@ public class CatalogResource extends AbstractMagentoResource {
 
       filterIndex++;
     }
-    return getConnector().performGet(PRODUCTS_PATH, ProductSearchResultsDocument.class, queryParams, getStoreCode());
+    return getConnector().performGet(PRODUCTS_PATH, ProductSearchResultsDocument.class, queryParams, storeId);
   }
 
-  public ProductSearchResultsDocument getProductsBySearchTerm(String searchTerm, Map<String, String> searchParams) {
-    return searchProductsBySearchTerm(searchTerm, searchParams);
+  public ProductSearchResultsDocument getProductsBySearchTerm(@Nonnull String storeId, @Nonnull String searchTerm,
+                                                              @Nonnull Map<String, String> searchParams) {
+    return searchProductsBySearchTerm(storeId, searchTerm, searchParams);
   }
 
   /*    searchCriteria[filter_groups][0][filters][0][field]=name&
@@ -126,7 +99,8 @@ public class CatalogResource extends AbstractMagentoResource {
       searchCriteria[filter_groups][0][filters][1][field]=name&
       searchCriteria[filter_groups][0][filters][1][value]=%25Parachute%25&
       searchCriteria[filter_groups][0][filters][1][condition_type]=like*/
-  protected ProductSearchResultsDocument searchProductsBySearchTerm(String searchTerm, Map<String, String> searchParams) {
+  protected ProductSearchResultsDocument searchProductsBySearchTerm(@Nonnull String storeId, @Nonnull String searchTerm,
+                                                                    @Nonnull Map<String, String> searchParams) {
     MultiValueMap queryParams = new LinkedMultiValueMap();
     int filterIndex = 0;
 
@@ -207,7 +181,6 @@ public class CatalogResource extends AbstractMagentoResource {
 
     //http://magento.cmdemo.perficient.com/rest/default/V1/products/?searchCriteria[pageSize]=4&searchCriteria[currentPage]=1&searchCriteria[filter_groups][0][filters][0][field]=name&searchCriteria[filter_groups][0][filters][0][value]=%cm%&searchCriteria[filter_groups][0][filters][0][condition_type]=like
     //http://magento.cmdemo.perficient.com/rest/default/V1/search?searchCriteria[requestName]=advanced_search_container&searchCriteria[filter_groups][0][filters][0][field]=name&searchCriteria[filter_groups][0][filters][0][value]=wat&searchCriteria[filter_groups][0][filters][0][condition_type]=like
-    return getConnector().performGet(PRODUCTS_PATH, ProductSearchResultsDocument.class, queryParams, getStoreCode());
+    return getConnector().performGet(PRODUCTS_PATH, ProductSearchResultsDocument.class, queryParams, storeId);
   }
-
 }

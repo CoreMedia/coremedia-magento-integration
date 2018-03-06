@@ -1,13 +1,15 @@
 package com.coremedia.livecontext.ecommerce.magento.common;
 
 import com.coremedia.blueprint.base.livecontext.ecommerce.common.BaseCommerceIdProvider;
+import com.coremedia.livecontext.ecommerce.catalog.CatalogAlias;
 import com.coremedia.livecontext.ecommerce.catalog.Category;
 import com.coremedia.livecontext.ecommerce.catalog.Product;
 import com.coremedia.livecontext.ecommerce.catalog.ProductVariant;
+import com.coremedia.livecontext.ecommerce.common.CommerceId;
 import com.coremedia.livecontext.ecommerce.common.InvalidIdException;
+import com.coremedia.livecontext.ecommerce.common.Vendor;
 import com.coremedia.livecontext.ecommerce.p13n.Segment;
 import org.apache.commons.lang3.StringUtils;
-
 
 /**
  * Utility class to convert external Magento ids to internal commerce ids and vice versa.
@@ -15,26 +17,21 @@ import org.apache.commons.lang3.StringUtils;
 public final class CommerceIdHelper {
 
   private static final String MAGENTO_VENDOR_PREFIX = "mag";
+  public static final Vendor MAGENTO = Vendor.of(MagentoCommerceIdProvider.MAGENTO_VENDOR_PREFIX);
 
-  private static final BaseCommerceIdProvider INSTANCE = new BaseCommerceIdProvider();
+  private static final BaseCommerceIdProvider INSTANCE = new BaseCommerceIdProvider(MAGENTO);
 
   public static final String TECH_ID_PREFIX = "techId:";
-
-  static {
-    INSTANCE.setVendor(MAGENTO_VENDOR_PREFIX);
-  }
 
   private CommerceIdHelper() {
   }
 
-
-  public static String formatCategoryId(String externalId) {
-    return convertToInternalId(externalId, Category.class);
+  public static CommerceId formatCategoryId(CatalogAlias alias, String externalId) {
+    return convertToInternalId(alias, externalId, Category.class);
   }
 
-
-  public static String formatProductId(String externalId) {
-    return convertToInternalId(externalId, Product.class);
+  public static CommerceId formatProductId(CatalogAlias alias, String externalId) {
+    return convertToInternalId(alias, externalId, Product.class);
   }
 
   public static boolean isTechId(String objectId) {
@@ -43,23 +40,18 @@ public final class CommerceIdHelper {
 
   /**
    * Converts a given (external) id to an internal id.
-   *
-   * @param externalId external id
-   * @param typeOf
-   * @return
    */
-  public static String convertToInternalId(String externalId, Class typeOf) {
-
+  public static CommerceId convertToInternalId(CatalogAlias alias, String externalId, Class typeOf) {
     if (ProductVariant.class.isAssignableFrom(typeOf)) {
-      return INSTANCE.formatProductVariantId(externalId);
+      return INSTANCE.formatProductVariantId(alias, externalId);
     }
 
     if (Product.class.isAssignableFrom(typeOf)) {
-      return INSTANCE.formatProductId(externalId);
+      return INSTANCE.formatProductId(alias, externalId);
     }
 
     if (Category.class.isAssignableFrom(typeOf)) {
-      return INSTANCE.formatCategoryId(externalId);
+      return INSTANCE.formatCategoryId(alias, externalId);
     }
 
     if (Segment.class.isAssignableFrom(typeOf)) {
@@ -69,7 +61,6 @@ public final class CommerceIdHelper {
     throw new InvalidIdException("Unsupported bean type");
   }
 
-
   /**
    * Converts a given (internal) id to an external id.
    *
@@ -77,7 +68,8 @@ public final class CommerceIdHelper {
    * @return
    */
   public static String convertToExternalId(String internalId) {
-    String id = isInternalId(internalId) ? INSTANCE.parseExternalIdFromId(internalId) : internalId;
+//    String id = isInternalId(internalId) ? INSTANCE.parseExternalIdFromId(internalId) : internalId;
+    String id = internalId;
 
     if (CommerceIdHelper.isTechId(id)) {
       id = CommerceIdHelper.parseIdFromTechId(id);
@@ -86,25 +78,23 @@ public final class CommerceIdHelper {
     return id;
   }
 
-
   public static boolean isSkuId(String id) {
     return StringUtils.isNoneBlank(id);
   }
 
-
   private static boolean isInternalId(String id) {
     return id.startsWith(MAGENTO_VENDOR_PREFIX);
   }
-
 
   public static boolean isCategoryId(String id) {
     return true;
   }
 
   public static String parseIdFromTechId(String techId) {
-    if(techId.contains(TECH_ID_PREFIX)) {
+    if (techId.contains(TECH_ID_PREFIX)) {
       return techId.split(":")[1];
     }
+
     return techId;
   }
 }

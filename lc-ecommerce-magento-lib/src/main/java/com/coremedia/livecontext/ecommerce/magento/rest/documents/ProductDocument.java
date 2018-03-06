@@ -97,7 +97,6 @@ public class ProductDocument extends AbstractMagentoDocument {
   @JsonProperty("tier_prices")
   private List<Object> tierPrices;
 
-
   @Override
   public String getId() {
     return getSku();  // Needs to be sku since REST API does not work with the internal numeric id!!!

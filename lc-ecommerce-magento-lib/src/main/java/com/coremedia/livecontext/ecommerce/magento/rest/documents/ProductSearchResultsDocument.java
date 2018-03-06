@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-
 /**
  * JavaBean describing a result of a product search as returned from a magento catalog.
  * Used for mapping REST resource results to local documents.

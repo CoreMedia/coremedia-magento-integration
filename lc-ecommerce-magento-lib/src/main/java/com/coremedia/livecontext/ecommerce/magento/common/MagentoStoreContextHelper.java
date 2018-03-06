@@ -1,16 +1,18 @@
 package com.coremedia.livecontext.ecommerce.magento.common;
 
-import com.coremedia.blueprint.base.livecontext.ecommerce.common.DefaultConnection;
+import com.coremedia.blueprint.base.livecontext.ecommerce.common.CurrentCommerceConnection;
 import com.coremedia.blueprint.base.livecontext.ecommerce.common.StoreContextImpl;
 import com.coremedia.cap.multisite.Site;
+import com.coremedia.livecontext.ecommerce.common.CommerceConnection;
 import com.coremedia.livecontext.ecommerce.common.InvalidContextException;
 import com.coremedia.livecontext.ecommerce.common.StoreContext;
 import com.coremedia.livecontext.ecommerce.magento.rest.documents.StoreConfigDocument;
 import org.apache.commons.lang3.LocaleUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import javax.annotation.Nonnull;
 import java.util.Currency;
-
+import java.util.Optional;
 
 /**
  * Magento specific {@link StoreContext} utilities.
@@ -32,17 +34,14 @@ public class MagentoStoreContextHelper {
   public static final String SECURE_BASE_STATIC_URL = "secure_base_static_url";
   public static final String SECURE_BASE_MEDIA_URL = "secure_base_media_url";
 
-  // static utility class
   private MagentoStoreContextHelper() {
   }
 
-
-  public static StoreContext buildContext(Site site, String name, StoreConfigDocument storeConfig)
-          throws InvalidContextException {
-
+  public static StoreContext buildContext(Site site, String name, StoreConfigDocument storeConfig) {
     if (storeConfig == null) {
       throw new InvalidContextException("Store config document from magento backend must not be null.");
     }
+
     String id = storeConfig.getId();
 
     if (StringUtils.isBlank(id)) {
@@ -57,7 +56,7 @@ public class MagentoStoreContextHelper {
     context.put(StoreContextImpl.CATALOG_ID, storeConfig.getCode());
 //    context.put(StoreContextImpl.STORE_ID, id);
     //TODO we use the name instead of the ID since '1' is conflicting with existing LC implementations in the one repo
-    context.put(StoreContextImpl.STORE_ID, name);
+    context.put(StoreContextImpl.STORE_ID, storeConfig.getCode());
     context.put(StoreContextImpl.STORE_NAME, name);
     context.put(CODE, storeConfig.getCode());
 
@@ -96,63 +95,63 @@ public class MagentoStoreContextHelper {
     return (String) context.get(CODE);
   }
 
-
   public static String getWebsiteId(StoreContext context) {
     return (String) context.get(WEBSITE_ID);
   }
-
 
   public static Currency getBaseCurrencyCode(StoreContext context) {
     return (Currency) context.get(BASE_CURRENCY_CODE);
   }
 
-
   public static Currency getDefaultDisplayCurrencyCode(StoreContext context) {
     return (Currency) context.get(DEFAULT_DISPLAY_CURRENCY_CODE);
   }
-
 
   public static String getTimezone(StoreContext context) {
     return (String) context.get(TIMEZONE);
   }
 
-
   public static String getWeightUnit(StoreContext context) {
     return (String) context.get(WEIGHT_UNIT);
   }
-
 
   public static String getBaseUrl(StoreContext context) {
     return (String) context.get(BASE_URL);
   }
 
-
+  @Nonnull
   public static String getBaseLinkUrl(StoreContext context) {
-    return schemeless ((String) context.get(BASE_LINK_URL));
+    return schemeless((String) context.get(BASE_LINK_URL));
   }
-
 
   public static String getBaseStaticUrl(StoreContext context) {
     return (String) context.get(BASE_STATIC_URL);
   }
 
-
+  @Nonnull
   public static String getBaseMediaUrl(StoreContext context) {
     return schemeless((String) context.get(BASE_MEDIA_URL));
   }
 
   public static StoreContext getCurrentContext() {
-    return DefaultConnection.get().getStoreContext();
+    return findCurrentContext().orElse(null);
   }
 
   public static void setCurrentContext(StoreContext context) {
-    DefaultConnection.get().setStoreContext(context);
+    CurrentCommerceConnection.get().setStoreContext(context);
   }
 
-  private static String schemeless(String url) {
-    if(url.contains("http")) {
-      return url.substring(url.indexOf(":")+1, url.length());
+  @Nonnull
+  public static Optional<StoreContext> findCurrentContext() {
+    return CurrentCommerceConnection.find().map(CommerceConnection::getStoreContext);
+  }
+
+  @Nonnull
+  private static String schemeless(@Nonnull String url) {
+    if (url.contains("http")) {
+      return url.substring(url.indexOf(":") + 1, url.length());
     }
+
     return url;
   }
 }

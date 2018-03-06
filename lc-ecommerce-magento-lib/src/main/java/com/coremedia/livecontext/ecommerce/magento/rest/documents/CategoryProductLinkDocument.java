@@ -2,7 +2,6 @@ package com.coremedia.livecontext.ecommerce.magento.rest.documents;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * JavaBean describing a category product link taken from a magento catalog.
  * Used for mapping REST resource results to local documents.

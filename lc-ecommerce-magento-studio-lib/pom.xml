@@ -7,14 +7,14 @@
   <parent>
     <groupId>com.coremedia.blueprint</groupId>
     <artifactId>magento</artifactId>
-    <version>17-BP-SNAPSHOT</version>
+    <version>1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>lc-ecommerce-magento-component</artifactId>
-  <name>LiveContext for Magento Component</name>
+  <artifactId>lc-ecommerce-magento-studio-lib</artifactId>
+  <name>LiveContext for Magento Studio Lib</name>
 
   <properties>
-    <coremedia.project.extension.for>cae,studio-lib</coremedia.project.extension.for>
+    <coremedia.project.extension.for>studio-lib</coremedia.project.extension.for>
   </properties>
 
   <dependencies>

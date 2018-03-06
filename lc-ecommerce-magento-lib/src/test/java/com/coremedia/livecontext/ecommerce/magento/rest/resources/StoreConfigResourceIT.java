@@ -1,45 +1,34 @@
 package com.coremedia.livecontext.ecommerce.magento.rest.resources;
 
 import com.coremedia.livecontext.ecommerce.magento.rest.documents.StoreConfigDocument;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Integration test to access store configs.
  */
-public class StoreConfigResourceIT extends MagentoResourceITBase {
-  private static final Logger LOG = LoggerFactory.getLogger(StoreConfigResourceIT.class);
+class StoreConfigResourceIT extends MagentoResourceITBase {
 
+  private static final Logger LOG = LoggerFactory.getLogger(StoreConfigResourceIT.class);
 
   @InjectMocks
   private StoreConfigResource storeConfigResource = new StoreConfigResource(); // NOPMD - this is actually is used
 
-
-  @BeforeMethod
-  public void init() {
-    LOG.info("setUp()");
-    super.init();
-  }
-
-
   @Test
-  public void testGetAllStoreConfigs() {
+  void testGetAllStoreConfigs() {
     List<StoreConfigDocument> configs = storeConfigResource.getStoreConfigs();
-    Assert.assertEquals(configs.size(), 1, "Unexpected number of configs encountered.");
+    assertThat(configs).as("Unexpected number of configs encountered.").hasSize(1);
   }
-
 
   @Test
-  public void testGetStoreConfig() {
+  void testGetStoreConfig() {
     StoreConfigDocument config = storeConfigResource.getStoreConfig("default");
-    Assert.assertEquals(config.getCode(), "default", "Unexpected result code for store config queried via its code.");
+    assertThat(config.getCode()).as("Unexpected result code for store config queried via its code.").isEqualTo("default");
   }
-
 }

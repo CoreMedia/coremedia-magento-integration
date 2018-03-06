@@ -2,7 +2,6 @@ package com.coremedia.livecontext.ecommerce.magento.rest.documents;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Resource representing a store configuration.
  */
