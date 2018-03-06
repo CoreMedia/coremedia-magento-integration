@@ -1,0 +1,33 @@
+{
+  "name": "@coremedia/magento-theme",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "start": "cm monitor",
+    "theme-importer": "cm theme-importer"
+  },
+  "dependencies": {
+    "@coremedia/brick-cta": "^1.0.0",
+    "@coremedia/brick-default-teaser": "^1.0.0",
+    "@coremedia/brick-generic-templates": "^1.0.0",
+    "@coremedia/brick-hero-teaser": "^1.0.0",
+    "@coremedia/brick-livecontext": "^1.0.0",
+    "@coremedia/brick-preview": "^1.0.0",
+    "@coremedia/brick-responsive-images": "^1.0.0",
+    "@coremedia/cm-cli": "^2.0.0",
+    "@coremedia/theme-utils": "^3.0.0",
+    "webpack": "3.10.0"
+  },
+  "main": "src/js/index.js",
+  "coremedia": {
+    "type": "theme",
+    "name": "magento"
+  },
+  "browserslist": [
+    "last 1 Chrome version",
+    "last 1 Firefox version",
+    "last 1 Edge version",
+    "Explorer >= 11"
+  ]
+}

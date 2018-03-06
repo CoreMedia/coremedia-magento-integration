@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<themeDefinition modelVersion="1">
+<name>magento</name>
+<!-- <description>a short description</description> -->
+<!-- <thumbnail>img/theme-preview.jpg</thumbnail> -->
+<javaScriptLibraries>
+  <!-- add thirdparty js files that are not bundled via webpack here -->
+  <!-- <javaScript>vendor/some-vendor-script.js</javaScript> -->
+</javaScriptLibraries>
+<javaScripts>
+  <!-- add own js files that are not bundled via webpack here -->
+  <!-- <javaScript>js/your-code.js</javaScript> -->
+  <javaScript disableCompress="true">js/magento.js</javaScript>
+</javaScripts>
+<styleSheets>
+  <css disableCompress="true">css/magento.css</css>
+</styleSheets>
+<templateSets>
+  <templateSet>templates/magento-templates.jar</templateSet>
+  <templateSet>templates/bricks-templates.jar</templateSet>
+</templateSets>
+<resourceBundles>
+  <!-- add theme resource bundles here -->
+  <resourceBundle>l10n/Magento_en.properties</resourceBundle>
+  <!-- merged resource bundles of all bricks, activate this if you are using bricks -->
+  <resourceBundle>l10n/Bricks_en.properties</resourceBundle>
+</resourceBundles>
+</themeDefinition>

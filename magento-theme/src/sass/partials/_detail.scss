@@ -1,0 +1,23 @@
+.#{$cm-details-prefix} {
+  &__headline {
+    font-weight: 300;
+    line-height: 1.1;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &__date {
+    text-align: start;
+  }
+
+  &__time {
+    color: #333;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.42857143;
+    font-size: 1.4rem;
+  }
+}

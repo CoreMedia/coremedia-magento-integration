@@ -1,0 +1,22 @@
+.#{$cm-teasable-prefix} {
+  padding: 0 0 2rem 0;
+  &__caption {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: auto;
+    bottom: 2rem;
+    transform: none;
+  }
+  &__headline {
+    padding: 10px;
+    > span {
+      background: rgba(25, 121, 195, 1);
+      border: 1px solid #1979c3;
+      border-radius: 3px;
+      color: #fff;
+      font-size: 14px;
+      padding: 10px 15px;
+    }
+  }
+}
