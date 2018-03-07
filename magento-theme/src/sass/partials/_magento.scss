@@ -1,0 +1,18 @@
+.#{$page}header {
+  padding-bottom: 0;
+  margin: 0;
+  border-bottom: none;
+
+  & > .panel {
+    margin-bottom: 0;
+    background-color: #7e807e;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+
+    & > .panel {
+      background-color: #7e807e;
+      margin-bottom: 0;
+    }
+  }
+}
